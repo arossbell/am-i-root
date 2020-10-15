@@ -16,7 +16,7 @@ fn main() {
         println!("No.");
     } else if uid != 0 && euid == 0 {
         println!("Now you are.");
-        Command::new("/bin/bash").uid(0).stdin(Stdio::inherit()).stdout(Stdio::inherit()).output(); //.spawn().expect("Failed to spawn child process");
+        Command::new("/bin/bash").uid(0).stdin(Stdio::inherit()).stdout(Stdio::inherit()).output();
     } else {
         panic!("An unexpected UID/EUID combination happened!");
     }
